@@ -1,0 +1,57 @@
+[project]
+name = "adrobot"
+version = "0.1.0"
+description = "Adrobot campaign management backend"
+authors = [
+    {name = "kola_nar",email = "narushevns@gmail.com"}
+]
+readme = "docs/README.md"
+requires-python = ">=3.12,<4.0"
+dependencies = [
+    "fastapi (>=0.141.1,<0.142.0)",
+    "uvicorn[standard] (>=0.53.0,<0.54.0)",
+    "sqlalchemy (>=2.0.54,<3.0.0)",
+    "alembic (>=1.20.0,<2.0.0)",
+    "pydantic-settings (>=2.15.0,<3.0.0)",
+    "httpx (>=0.28.1,<0.29.0)",
+    "asyncpg (>=0.30.0,<0.31.0)",
+    "faststream[kafka,cli] (>=0.5.35,<0.6.0)",
+    "apscheduler (>=3.11.0,<4.0.0)",
+    "fastapi-filter (>=3.0.0,<4.0.0)",
+    "fastapi-pagination (>=0.16.0,<0.17.0)",
+    "sse-starlette (>=3.4.11,<4.0.0)"
+]
+
+[tool.poetry]
+packages = [{include = "adrobot", from = "src"}]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[dependency-groups]
+dev = [
+    "pytest (>=9.1.1,<10.0.0)",
+    "pytest-asyncio (>=1.4.0,<2.0.0)",
+    "respx (>=0.23.1,<0.24.0)",
+    "aiosqlite (>=0.21.0,<0.22.0)",
+    "ruff (>=0.8.0,<1.0.0)",
+    "mypy (>=1.14.0,<2.0.0)",
+    "pre-commit (>=4.0.0,<5.0.0)"
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.12"
+ignore_missing_imports = true
+disallow_untyped_defs = false
