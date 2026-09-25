@@ -96,7 +96,7 @@ src/adrobot/
 | `KEITARO_API_KEY` | API-ключ из админки Keitaro |
 | `KEITARO_DOMAIN_ID` | ID домена для создаваемых кампаний |
 | `KEITARO_TRAFFIC_SOURCE_ID` | ID источника трафика для создаваемых кампаний |
-| `DATABASE_URL` | Строка подключения к PostgreSQL |
+| `DB_HOST`, `DB_PORT`, `DB_USER`, `DB_PASSWORD`, `DB_NAME` | Подключение к PostgreSQL (строка подключения собирается в `settings.db.database_url`) |
 | `KAFKA_BOOTSTRAP_SERVERS` | Адрес Redpanda |
 | `GROUPS_SYNC_INTERVAL_MINUTES` | Интервал синхронизации групп из Keitaro |
 
